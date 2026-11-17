@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🎨 Petualangan Bangun Datar</title>
+<style>
+:root{--ink:#172554;--blue:#087eaa;--pale:#eaf7fc;--line:#d8e3ec;--muted:#607080}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f8fb;color:#172b3a;line-height:1.5}
+main{max-width:980px;margin:auto;padding:18px}.hero{background:linear-gradient(120deg,#087eaa,#4f46e5);color:white;padding:26px;border-radius:20px}
+h1{margin:5px 0;font-size:clamp(25px,5vw,38px)}.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0}
+button{font:inherit;cursor:pointer}.tab,.btn,.shape,.choice{border:1px solid var(--line);border-radius:12px;padding:12px;background:white;color:inherit}
+.tab.active,.btn.primary{background:var(--blue);color:white;border-color:var(--blue)}.panel{background:white;border:1px solid var(--line);border-radius:17px;padding:18px;margin:12px 0}
+section[hidden]{display:none}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.shape{display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--pale);min-height:120px}
+.shape-emoji{font-size:43px}small,.muted{color:var(--muted)}.formula{background:#f0f7fb;border-radius:12px;padding:13px;margin:9px 0}
+.choice{display:block;width:100%;text-align:left;margin:8px 0}.choice:hover,.shape:hover{border-color:var(--blue)}
+.actions{display:flex;gap:8px;margin-top:15px}.actions button{flex:1}.btn{padding:11px 15px}.meter{height:9px;background:#e5e7eb;border-radius:9px;overflow:hidden;margin:12px 0}.meter span{display:block;height:100%;background:#10b981;width:0}
+.big{font-size:30px;font-weight:bold}.slide{min-height:245px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.feedback{padding:12px;border-radius:12px;background:#eaf7ee;margin-top:12px}.score{font-size:42px;color:var(--blue);font-weight:bold}
+@media(max-width:520px){main{padding:12px}.hero{padding:20px}.panel{padding:14px}}
+</style></head><body><main>
+<header class="hero"><div>MEDIA PEMBELAJARAN INTERAKTIF · MATEMATIKA KELAS 5</div><h1>🎨 Petualangan Bangun Datar</h1><p>Belajar, bermain, dan menjadi juara! · Bisa digunakan tanpa internet.</p></header>
+<nav class="tabs"><button class="tab active" data-tab="materi">📚 Materi</button><button class="tab" data-tab="game">🎮 Game</button><button class="tab" data-tab="presentasi">🖥️ Presentasi</button></nav>
+<section id="materi">
+ <div class="panel"><b>TUJUAN PEMBELAJARAN</b><h2>Apa yang akan kita pelajari?</h2>
+ <p>Mengenali berbagai bentuk bangun datar, memahami sifat-sifatnya, serta menggunakan rumus yang sesuai untuk menyelesaikan soal.</p></div>
+ <h2>Kenali 8 Bangun Datar</h2><p class="muted">Pilih gambar untuk melihat penjelasannya.</p>
+ <div class="grid">
+        <button class="shape" onclick="showShape(0)">
+          <div class="shape-emoji">⬜</div><b>Persegi</b>
+          <small>Tekan untuk detail</small>
+        </button>
+        <button class="shape" onclick="showShape(1)">
+          <div class="shape-emoji">▭</div><b>Persegi Panjang</b>
+          <small>Tekan untuk detail</small>
+        </button>
+        <button class="shape" onclick="showShape(2)">
+          <div class="shape-emoji">🔺</div><b>Segitiga</b>
+          <small>Tekan untuk detail</small>
+        </button>
+        <button class="shape" onclick="showShape(3)">
+          <div class="shape-emoji">▱</div><b>Jajargenjang</b>
+          <small>Tekan untuk detail</small>
+        </button>
+        <button class="shape" onclick="showShape(4)">
+          <div class="shape-emoji">⏢</div><b>Trapesium</b>
+          <small>Tekan untuk detail</small>
+        </button>
+        <button class="shape" onclick="showShape(5)">
+          <div class="shape-emoji">◇</div><b>Belah Ketupat</b>
+          <small>Tekan untuk detail</small>
+        </button>
+        <button class="shape" onclick="showShape(6)">
+          <div class="shape-emoji">🪁</div><b>Layang-layang</b>
+          <small>Tekan untuk detail</small>
+        </button>
+        <button class="shape" onclick="showShape(7)">
+          <div class="shape-emoji">⭕</div><b>Lingkaran</b>
+          <small>Tekan untuk detail</small>
+        </button></div>
+ <div class="panel" id="shapeDetail"><h3>💡 Tahukah Kamu?</h3><p>Bangun Datar adalah bentuk geometri yang dapat ditemukan dalam kehidupan sehari-hari.</p></div>
+ <div class="panel"><h2>📐 Rumus Penting</h2><article class="formula"><b>Persegi</b><p>Keliling = 4 × s · Luas = s × s</p></article><article class="formula"><b>Persegi panjang</b><p>Keliling = 2 × (p + l) · Luas = p × l</p></article><article class="formula"><b>Segitiga</b><p>Keliling = a + b + c · Luas = ½ × alas × tinggi</p></article><article class="formula"><b>Jajargenjang</b><p>Keliling = 2 × (a + b) · Luas = alas × tinggi</p></article><article class="formula"><b>Trapesium</b><p>Keliling = jumlah semua sisi · Luas = ½ × (jumlah sisi sejajar) × tinggi</p></article><article class="formula"><b>Belah ketupat</b><p>Keliling = 4 × s · Luas = ½ × d₁ × d₂</p></article><article class="formula"><b>Layang-layang</b><p>Keliling = 2 × (a + b) · Luas = ½ × d₁ × d₂</p></article><article class="formula"><b>Lingkaran</b><p>Keliling = 2 × π × r · Luas = π × r² (π = 22/7 atau 3,14)</p></article><article class="formula"><b>Keterangan</b><p>s = sisi; p = panjang; l = lebar; d₁ dan d₂ = diagonal; r = jari-jari.</p></article></div>
+ <div class="panel"><h2>✏️ Contoh dan latihan singkat</h2><p>Perhatikan informasi pada materi, tuliskan apa yang diketahui, pilih rumus yang tepat, lalu hitung dengan teliti. Jangan lupa menuliskan satuan jawaban.</p></div>
+ <button class="btn primary" onclick="go('game')">Ayo uji pengetahuanmu →</button>
+</section>
+<section id="game" hidden>
+ <div class="panel"><b>GAME EDUKASI</b><h2>Misi Penjelajah Bangun Datar</h2><p>Jawab 8 pertanyaan. Setiap jawaban benar mendapat 10 poin.</p>
+ <div class="meter"><span id="progress"></span></div><small id="counter"></small><p>⭐ Skor: <b id="score">0</b></p></div>
+ <div class="panel"><div class="big" id="qemoji">🎯</div><h3 id="question"></h3><div id="answers"></div><div id="feedback" aria-live="polite"></div>
+ <button class="btn primary" id="next" disabled>Periksa jawaban</button></div><button class="btn" onclick="resetGame()">↻ Ulangi permainan</button>
+</section>
+<section id="presentasi" hidden>
+ <div class="panel"><b>PRESENTASI INTERAKTIF</b><h2>Ayo belajar bersama!</h2><div class="meter"><span id="slideProgress"></span></div><small id="slideCount"></small>
+ <div class="slide" id="slideContent"></div><div class="actions"><button class="btn" id="prev">← Sebelumnya</button><button class="btn primary" id="nextSlide">Berikutnya →</button></div></div>
+</section>
+<p class="muted" style="text-align:center;font-size:13px">🌟 Belajar matematika itu menyenangkan! 🌟</p>
+</main>
+<script>
+const shapes=[{"name": "Persegi", "emoji": "⬜", "desc": "Memiliki 4 sisi sama panjang dan 4 sudut siku-siku.", "example": "Ubin lantai dan papan catur.", "formula": "K = 4 × s · L = s × s"}, {"name": "Persegi Panjang", "emoji": "▭", "desc": "Memiliki 4 sisi; sisi berhadapan sama panjang dan 4 sudut siku-siku.", "example": "Buku, pintu, dan papan tulis.", "formula": "K = 2 × (p + l) · L = p × l"}, {"name": "Segitiga", "emoji": "🔺", "desc": "Memiliki 3 sisi dan 3 titik sudut. Ada segitiga sama sisi, sama kaki, dan sembarang.", "example": "Rambu lalu lintas.", "formula": "K = a + b + c · L = ½ × alas × tinggi"}, {"name": "Jajargenjang", "emoji": "▱", "desc": "Memiliki 4 sisi; sisi berhadapan sejajar dan sama panjang.", "example": "Motif geometris.", "formula": "K = 2 × (a + b) · L = alas × tinggi"}, {"name": "Trapesium", "emoji": "⏢", "desc": "Memiliki 4 sisi dan sepasang sisi sejajar.", "example": "Beberapa bentuk atap dan pot bunga.", "formula": "K = jumlah semua sisi · L = ½ × (a + b) × t"}, {"name": "Belah Ketupat", "emoji": "◇", "desc": "Memiliki 4 sisi sama panjang. Diagonalnya saling tegak lurus.", "example": "Ketupat dan motif wajik.", "formula": "K = 4 × s · L = ½ × d₁ × d₂"}, {"name": "Layang-layang", "emoji": "🪁", "desc": "Memiliki dua pasang sisi berdekatan yang sama panjang.", "example": "Layang-layang yang dimainkan di lapangan.", "formula": "K = 2 × (a + b) · L = ½ × d₁ × d₂"}, {"name": "Lingkaran", "emoji": "⭕", "desc": "Memiliki satu sisi lengkung dan tidak mempunyai titik sudut. Jari-jari adalah jarak pusat ke tepi.", "example": "Jam dinding, piring, dan roda.", "formula": "K = 2 × π × r · L = π × r²"}];
+const questions=[{"e": "⬜", "q": "Bangun datar yang memiliki empat sisi sama panjang dan empat sudut siku-siku adalah ...", "a": ["Persegi", "Trapesium", "Layang-layang", "Segitiga"], "c": 0, "w": "Persegi memiliki empat sisi sama panjang dan empat sudut siku-siku."}, {"e": "▭", "q": "Berapa jumlah sisi pada persegi panjang?", "a": ["3 sisi", "4 sisi", "5 sisi", "6 sisi"], "c": 1, "w": "Persegi panjang mempunyai empat sisi."}, {"e": "🔺", "q": "Bangun datar yang memiliki tiga sisi adalah ...", "a": ["Lingkaran", "Persegi", "Segitiga", "Belah ketupat"], "c": 2, "w": "Segitiga mempunyai tiga sisi dan tiga titik sudut."}, {"e": "📐", "q": "Rumus luas persegi adalah ...", "a": ["s × s", "4 × s", "p × l", "½ × alas × tinggi"], "c": 0, "w": "Luas persegi = sisi × sisi."}, {"e": "🧮", "q": "Persegi memiliki sisi 6 cm. Berapakah luasnya?", "a": ["12 cm²", "24 cm²", "30 cm²", "36 cm²"], "c": 3, "w": "6 × 6 = 36 cm²."}, {"e": "▭", "q": "Panjang persegi panjang 10 cm dan lebar 4 cm. Berapa kelilingnya?", "a": ["14 cm", "28 cm", "40 cm", "20 cm"], "c": 1, "w": "Keliling = 2 × (10 + 4) = 28 cm."}, {"e": "🔺", "q": "Segitiga memiliki alas 12 cm dan tinggi 5 cm. Luasnya adalah ...", "a": ["17 cm²", "25 cm²", "30 cm²", "60 cm²"], "c": 2, "w": "Luas = ½ × 12 × 5 = 30 cm²."}, {"e": "⭕", "q": "Bangun datar yang tidak mempunyai titik sudut adalah ...", "a": ["Persegi", "Segitiga", "Trapesium", "Lingkaran"], "c": 3, "w": "Lingkaran tidak memiliki titik sudut."}];
+const slides=[{"e": "🌟", "t": "Selamat Datang!", "b": "Bangun datar adalah bangun dua dimensi yang memiliki panjang dan lebar.", "x": "Ayo menjadi penjelajah bangun datar!"}, {"e": "📐", "t": "Mengenal Bangun Datar", "b": "Kita akan belajar persegi, persegi panjang, segitiga, jajargenjang, trapesium, belah ketupat, layang-layang, dan lingkaran.", "x": "Temukan bentuk-bentuk itu di sekitarmu!"}, {"e": "⬜", "t": "Persegi dan Persegi Panjang", "b": "Persegi memiliki empat sisi sama panjang. Persegi panjang memiliki sisi berhadapan sama panjang. Keduanya memiliki empat sudut siku-siku.", "x": "Persegi: L = s × s. Persegi panjang: L = p × l."}, {"e": "🔺", "t": "Segitiga dan Jajargenjang", "b": "Segitiga memiliki tiga sisi. Jajargenjang memiliki dua pasang sisi berhadapan yang sejajar.", "x": "Segitiga: L = ½ × alas × tinggi. Jajargenjang: L = alas × tinggi."}, {"e": "◇", "t": "Trapesium, Belah Ketupat, dan Layang-layang", "b": "Trapesium memiliki sepasang sisi sejajar. Belah ketupat memiliki empat sisi sama panjang. Layang-layang memiliki dua pasang sisi berdekatan yang sama panjang.", "x": "Belah ketupat dan layang-layang: L = ½ × d₁ × d₂."}, {"e": "⭕", "t": "Mengenal Lingkaran", "b": "Lingkaran memiliki titik pusat dan jari-jari, yaitu jarak dari pusat ke tepi lingkaran.", "x": "Luas = π × r². Keliling = 2 × π × r."}, {"e": "🎉", "t": "Ayo Jadi Juara!", "b": "Kita sudah mengenal delapan bangun datar, sifat-sifat, keliling, dan luasnya.", "x": "Sekarang waktunya bermain kuis!"}];
+function showShape(i){const s=shapes[i];document.getElementById('shapeDetail').innerHTML=`<div class="big">${s.emoji}</div><h3>${s.name}</h3><p>${s.desc}</p><p><b>Contoh:</b> ${s.example}</p>${s.formula?`<p><b>Rumus:</b> ${s.formula}</p>`:''}`;}
+function go(id){document.querySelectorAll('section').forEach(s=>s.hidden=s.id!==id);document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>go(b.dataset.tab));
+let qi=0,score=0,selected=null,locked=false;
+function loadQ(){let q=questions[qi];selected=null;locked=false;document.getElementById('qemoji').textContent=q.e;document.getElementById('question').textContent=q.q;document.getElementById('counter').textContent=`Pertanyaan ${qi+1} dari ${questions.length}`;document.getElementById('score').textContent=score;document.getElementById('progress').style.width=(qi/questions.length*100)+'%';document.getElementById('feedback').innerHTML='';document.getElementById('next').disabled=true;document.getElementById('next').textContent='Periksa jawaban';document.getElementById('answers').innerHTML=q.a.map((a,i)=>`<button class="choice" data-i="${i}">${String.fromCharCode(65+i)}. ${a}</button>`).join('');document.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{if(locked)return;selected=+b.dataset.i;document.querySelectorAll('[data-i]').forEach(x=>x.style.borderColor='');b.style.borderColor='#087eaa';});}
+function advance(){if(locked){if(qi<questions.length-1){qi++;loadQ();}else finish();return;}if(selected===null){document.getElementById('feedback').textContent='Pilih salah satu jawaban terlebih dahulu.';return;}locked=true;let q=questions[qi],ok=selected===q.c;if(ok)score+=10;document.querySelectorAll('[data-i]').forEach(b=>{let i=+b.dataset.i;if(i===q.c)b.style.background='#d9fbe5';else if(i===selected)b.style.background='#fee2e2';});document.getElementById('score').textContent=score;document.getElementById('progress').style.width=((qi+1)/questions.length*100)+'%';document.getElementById('feedback').innerHTML=`<div class="feedback"><b>${ok?'🎉 Hebat! Jawaban benar!':'💪 Tetap semangat!'}</b><p>${q.w}</p></div>`;document.getElementById('next').disabled=false;document.getElementById('next').textContent=qi===questions.length-1?'Lihat hasil 🏆':'Pertanyaan berikutnya →';}
+function finish(){document.getElementById('game').innerHTML=`<div class="panel" style="text-align:center"><div style="font-size:60px">🏆</div><h2>Misi Selesai!</h2><div class="score">${score}/${questions.length*10}</div><p>${score===questions.length*10?'Luar biasa! Kamu juara!':score>=questions.length*6?'Hebat! Terus belajar!':'Jangan menyerah, coba lagi!'}</p><button class="btn primary" onclick="resetGame()">↻ Main lagi</button><button class="btn" onclick="location.reload()">Kembali ke awal</button></div>`;}
+function resetGame(){location.reload();}
+document.getElementById('next').onclick=advance;loadQ();
+let si=0;function renderSlide(){let s=slides[si];document.getElementById('slideContent').innerHTML=`<div class="big">${s.e}</div><h2>${s.t}</h2><p>${s.b}</p><div class="formula">${s.x}</div>`;document.getElementById('slideCount').textContent=`Slide ${si+1} dari ${slides.length}`;document.getElementById('slideProgress').style.width=((si+1)/slides.length*100)+'%';document.getElementById('prev').disabled=si===0;document.getElementById('nextSlide').textContent=si===slides.length-1?'Mulai game 🎮':'Berikutnya →';}
+document.getElementById('prev').onclick=()=>{if(si>0){si--;renderSlide();}};
+document.getElementById('nextSlide').onclick=()=>{if(si<slides.length-1){si++;renderSlide();}else go('game');};renderSlide();
+</script></body></html>
